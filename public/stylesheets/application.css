@@ -56,3 +56,27 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+
+table.styled {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.styled td {
+  text-align: left;
+}
+table.styled th {
+  text-align: left;
+  background-color: #fce7b4;
+  border-color: #f4ae09;
+  border-width: 1px;
+  border-bottom-style: solid;
+  padding: 5px 10px;
+}
+table.styled td {
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 5px;
+}
+table.styled tr:hover {
+  background-color: #fce7b4;
+}

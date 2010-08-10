@@ -1,6 +1,13 @@
 module ClientsHelper
-  def is_add_client?
-    params[:controller] == "clients" && [:new, :edit].include?(params[:action].to_sym)
+  def gmaps_initialize
+    if params[:controller] == "clients"
+      case params[:action].to_sym
+      when :new
+        "initialize();"
+      when :edit
+        "initialize_with_latlng(#{@client.latitude}, #{@client.longitude})"
+      end
+    end
   end
-  
+    
 end
