@@ -1,0 +1,435 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (46.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateClients (20100810172925)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "clients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "url" varchar(255), "phone_number" varchar(255), "latitude" decimal, "longitude" decimal, "media" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100810172925')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("clients")[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2010-08-10 19:35:51) [GET]
+  [4;36;1mClient Load (0.4ms)[0m   [0;1mSELECT * FROM "clients" [0m
+Rendering template within layouts/clients
+Rendering clients/index
+Completed in 45ms (View: 41, DB: 0) | 200 OK [http://localhost/clients]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:35:56) [GET]
+Rendering template within layouts/clients
+Rendering clients/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:40:13) [GET]
+Rendering template within layouts/clients
+Rendering clients/new
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:43:07) [GET]
+Rendering template within layouts/clients
+Rendering clients/new
+Completed in 30ms (View: 26, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:48:21) [GET]
+
+NoMethodError (undefined method `application' for #<ClientsController:0x10330fc60>):
+  app/controllers/clients_controller.rb:29:in `new'
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (107.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:49:05) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 29ms (View: 19, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:55:41) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 45ms (View: 35, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:55:48) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 81ms (View: 10, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:55:56) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 27ms (View: 17, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:56:33) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 26ms (View: 17, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:57:28) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #36 of app/views/clients/new.html.haml:
+33: 
+34: -content_for :javascript
+35:   function initialize() {
+36:       var latlng = new google.maps.LatLng(-34.397, 150.644);
+37:       var myOptions = {
+38:         zoom: 8,
+39:         center: latlng,
+
+    app/views/clients/new.html.haml:36
+    haml (3.0.13) lib/haml/precompiler.rb:355:in `push_plain'
+    haml (3.0.13) lib/haml/precompiler.rb:279:in `process_line'
+    haml (3.0.13) lib/haml/precompiler.rb:178:in `precompile'
+    haml (3.0.13) lib/haml/engine.rb:121:in `initialize'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `new'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `compile'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/clients_controller.rb:29:in `new'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (122.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:57:40) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #36 of app/views/clients/new.html.haml:
+33: 
+34: - content_for :javascript
+35:   function initialize() {
+36:       var latlng = new google.maps.LatLng(-34.397, 150.644);
+37:       var myOptions = {
+38:         zoom: 8,
+39:         center: latlng,
+
+    app/views/clients/new.html.haml:36
+    haml (3.0.13) lib/haml/precompiler.rb:355:in `push_plain'
+    haml (3.0.13) lib/haml/precompiler.rb:279:in `process_line'
+    haml (3.0.13) lib/haml/precompiler.rb:178:in `precompile'
+    haml (3.0.13) lib/haml/engine.rb:121:in `initialize'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `new'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `compile'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/clients_controller.rb:29:in `new'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (124.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:57:49) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #36 of app/views/clients/new.html.haml:
+33: 
+34: - content_for :javascript do
+35:   function initialize() {
+36:       var latlng = new google.maps.LatLng(-34.397, 150.644);
+37:       var myOptions = {
+38:         zoom: 8,
+39:         center: latlng,
+
+    app/views/clients/new.html.haml:36
+    haml (3.0.13) lib/haml/precompiler.rb:355:in `push_plain'
+    haml (3.0.13) lib/haml/precompiler.rb:279:in `process_line'
+    haml (3.0.13) lib/haml/precompiler.rb:178:in `precompile'
+    haml (3.0.13) lib/haml/engine.rb:121:in `initialize'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `new'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `compile'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/clients_controller.rb:29:in `new'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (123.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:58:51) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #36 of app/views/clients/new.html.haml:
+33: 
+34: - content_for :javascript do
+35:   function initialize() {
+36:       var latlng = new google.maps.LatLng(-34.397, 150.644);
+37:       var myOptions = {
+38:         zoom: 8,
+39:         center: latlng,
+
+    app/views/clients/new.html.haml:36
+    haml (3.0.13) lib/haml/precompiler.rb:355:in `push_plain'
+    haml (3.0.13) lib/haml/precompiler.rb:279:in `process_line'
+    haml (3.0.13) lib/haml/precompiler.rb:178:in `precompile'
+    haml (3.0.13) lib/haml/engine.rb:121:in `initialize'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `new'
+    haml (3.0.13) rails/./lib/haml/template/plugin.rb:29:in `compile'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/clients_controller.rb:29:in `new'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (124.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:58:57) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 28ms (View: 19, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:59:35) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 28ms (View: 19, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 19:59:59) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 95ms (View: 84, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:01:07) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 29ms (View: 17, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:02:21) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 25ms (View: 16, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:02:49) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 33ms (View: 24, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:02:56) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 80ms (View: 9, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:04:11) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:04:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:05:25) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 28ms (View: 17, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:05:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:09:17) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 42ms (View: 33, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:09:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:10:53) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:10:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:11:20) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+
+ActionView::TemplateError (undefined method `javascript_link_tag' for #<ActionView::Base:0x10354a9d0>) on line #9 of app/views/layouts/application.html.haml:
+6:       Clients: #{controller.action_name}
+7:     = stylesheet_link_tag 'scaffold'
+8:     %script{:type => 'text/javascript', :src => "http://maps.google.com/maps/api/js?sensor=false&language=#{I18n.locale}"}
+9:     = javascript_link_tag "application"
+10:     = yield :javascript
+11:     
+12:   %body{:onload => "#{'initialize()' if is_add_client?}"}
+
+    app/views/layouts/application.html.haml:9:in `_run_haml_app47views47layouts47application46html46haml'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (3.0.13) rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/clients_controller.rb:29:in `new'
+    haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendered rescues/_trace (113.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:11:40) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:11:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-08-10 20:12:01) [GET]
+Rendering template within layouts/application
+Rendering clients/new
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:12:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#create (for 127.0.0.1 at 2010-08-10 20:13:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"rldl1XzBSN8f4pvxsiOm4EFQqaRV8TuWhrJ1NGbmw20=", "client"=>{"name"=>"test", "latitude"=>"40.714224", "url"=>"test.com", "media"=>"", "phone_number"=>"0123456789", "longitude"=>"-73.961452"}}
+  [4;36;1mClient Create (35.6ms)[0m   [0;1mINSERT INTO "clients" ("name", "latitude", "created_at", "updated_at", "url", "phone_number", "media", "longitude") VALUES('test', 40.714224, '2010-08-10 18:13:25', '2010-08-10 18:13:25', 'test.com', '0123456789', '', -73.961452)[0m
+Redirected to http://localhost:3001/clients/1
+Completed in 47ms (DB: 36) | 302 Found [http://localhost/clients]
+
+
+Processing ClientsController#show (for 127.0.0.1 at 2010-08-10 20:13:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mClient Load (0.2ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering clients/show
+Completed in 129ms (View: 57, DB: 0) | 200 OK [http://localhost/clients/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:13:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#edit (for 127.0.0.1 at 2010-08-10 20:13:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering clients/edit
+Completed in 29ms (View: 18, DB: 0) | 200 OK [http://localhost/clients/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:13:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#edit (for 127.0.0.1 at 2010-08-10 20:14:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mClient Load (0.2ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering clients/edit
+Rendered clients/_form (61.3ms)
+Completed in 83ms (View: 73, DB: 0) | 200 OK [http://localhost/clients/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:14:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ClientsController#edit (for 127.0.0.1 at 2010-08-10 20:15:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mClient Load (0.2ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering clients/edit
+Rendered clients/_form (8.8ms)
+Completed in 29ms (View: 19, DB: 0) | 200 OK [http://localhost/clients/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:15:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  haml (3.0.13) rails/./lib/sass/plugin/rack.rb:41:in `call'
+
+Rendering rescues/layout (not_found)

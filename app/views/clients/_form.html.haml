@@ -1,0 +1,35 @@
+= f.error_messages
+%table
+  %tr
+    %td
+      %p
+        = f.label :name
+        %br/
+        = f.text_field :name
+      %p
+        = f.label :url
+        %br/
+        = f.text_field :url
+      %p
+        = f.label :phone_number
+        %br/
+        = f.text_field :phone_number
+      %p
+        = f.label :latitude
+        %br/
+        = f.text_field :latitude
+      %p
+        = f.label :longitude
+        %br/
+        = f.text_field :longitude
+      %p
+        = button_to_function "Preview", "codeLatLng()"
+      
+      %p
+        = f.label :media
+        %br/
+        = f.text_area :media
+      %p
+        = f.submit 'Create'
+    %td{:style => "vertical-align:top;"}
+      #map_canvas{:style => "width: 500px; height: 400px;"}

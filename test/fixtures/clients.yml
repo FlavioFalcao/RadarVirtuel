@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  phone_number: MyString
+  latitude: 9.99
+  longitude: 9.99
+  media: MyText
+
+two:
+  name: MyString
+  url: MyString
+  phone_number: MyString
+  latitude: 9.99
+  longitude: 9.99
+  media: MyText

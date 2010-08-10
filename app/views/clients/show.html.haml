@@ -1,0 +1,21 @@
+%p
+  %b Name:
+  = h @client.name
+%p
+  %b Url:
+  = h @client.url
+%p
+  %b Phone number:
+  = h @client.phone_number
+%p
+  %b Latitude:
+  = h @client.latitude
+%p
+  %b Longitude:
+  = h @client.longitude
+%p
+  %b Media:
+  = h @client.media
+= link_to 'Edit', edit_client_path(@client)
+|
+\#{link_to 'Back', clients_path}
