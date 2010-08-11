@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+  require_role :admin, :except => [:new, :create]
+  
   # GET /clients
   # GET /clients.xml
   def index
